@@ -1,0 +1,579 @@
+16:14:13 **** Rebuild of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Application\\App.o" "..\\Application\\App.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Server\\Server.o" "..\\Server\\Server.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Terminal\\Terminal.o" "..\\Terminal\\Terminal.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c:8:9: error: macro names must be identifiers
+ #define <stdio.h>
+         ^
+..\Card\Card.c:9:9: error: macro names must be identifiers
+ #define "Card.h"
+         ^~~~~~~~
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:13:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf ("Hello");
+  ^~~~~~
+..\Card\Card.c:13:2: warning: incompatible implicit declaration of built-in function 'printf'
+..\Card\Card.c:13:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+16:15:12 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:19:54 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:2: error: too few arguments to function 'getCardHolderName'
+  getCardHolderName();
+  ^~~~~~~~~~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: declared here
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+16:20:42 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:29: error: expected ')' before ';' token
+  getCardHolderName(card_data;
+                             ^
+..\Card\Card.c:15:20: error: incompatible type for argument 1 of 'getCardHolderName'
+  getCardHolderName(card_data;
+                    ^~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+16:20:49 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:20: error: incompatible type for argument 1 of 'getCardHolderName'
+  getCardHolderName(card_data);
+                    ^~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:16:1: error: expected statement before ')' token
+ );
+ ^
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+16:20:56 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:20: error: incompatible type for argument 1 of 'getCardHolderName'
+  getCardHolderName(card_data);
+                    ^~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+16:21:13 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:20: warning: passing argument 1 of 'getCardHolderName' from incompatible pointer type [-Wincompatible-pointer-types]
+  getCardHolderName(card_data.cardHolderName);
+                    ^~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char *'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+16:23:43 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:16:20: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  getCardHolderName(ptr_card_data);
+                    ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:25:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Payment_App.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:23:49 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+16:24:14 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:15:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:16:20: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  getCardHolderName(ptr_card_data);
+                    ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:9:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c: In function 'getCardHolderName':
+..\Card\Card.c:26:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Payment_App.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:24:18 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+16:28:12 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:20: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  getCardHolderName(ptr_card_data);
+                    ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+16:29:37 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+16:31:27 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:18:12: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+  printf ("%s", error);
+            ^
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:31:44 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:33:24 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:33:54 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+16:35:48 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:23: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  char ptr_card_data = &card_data.cardHolderName ;
+                       ^
+..\Card\Card.c:17:32: warning: passing argument 1 of 'getCardHolderName' makes pointer from integer without a cast [-Wint-conversion]
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'char'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:36:47 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:30: error: invalid initializer
+  ST_cardData ptr_card_data = &card_data ;
+                              ^
+..\Card\Card.c:17:32: error: incompatible type for argument 1 of 'getCardHolderName'
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+16:37:11 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:16:30: error: invalid initializer
+  ST_cardData ptr_card_data = &card_data.cardHolderName ;
+                              ^
+..\Card\Card.c:17:32: error: incompatible type for argument 1 of 'getCardHolderName'
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+16:37:22 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:17:32: error: incompatible type for argument 1 of 'getCardHolderName'
+  int error = getCardHolderName(ptr_card_data);
+                                ^~~~~~~~~~~~~
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+16:39:08 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:17:14: warning: 'ptr_card_data' is used uninitialized in this function [-Wuninitialized]
+  int error = getCardHolderName(ptr_card_data);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+16:39:27 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+16:40:49 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+17:00:31 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:17:3: warning: initializer-string for array of chars is too long
+  {"Andrew Hany Kamel Eskander" ,                  //26 char
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Card\Card.c:17:3: note: (near initialization for 'tester_name[0]')
+..\Card\Card.c:24:27: error: assignment to expression with array type
+  card_data.cardHolderName = tester_name [i];
+                           ^
+17:00:50 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:24:27: error: assignment to expression with array type
+  card_data.cardHolderName = tester_name [i];
+                           ^
+17:03:24 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:25:28: error: assignment to expression with array type
+   card_data.cardHolderName = tester_name [i];
+                            ^
+17:03:53 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:04:17 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:05:16 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:05:27 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:10:33 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:11:00 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:19:36 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:38:33: error: incompatible type for argument 1 of 'getCardHolderName'
+   int error = getCardHolderName(*ptr_card_data);
+                                 ^
+In file included from ..\Card\Card.c:10:0:
+..\Card\Card.h:27:14: note: expected 'ST_cardData * {aka struct ST_cardData *}' but argument is of type 'ST_cardData {aka struct ST_cardData}'
+ EN_cardError getCardHolderName(ST_cardData *cardData);
+              ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:53:6: warning: 'main' is normally a non-static function [-Wmain]
+  int main ()
+      ^~~~
+..\Card\Card.c:85:2: error: expected declaration or statement at end of input
+  }
+  ^
+At top level:
+..\Card\Card.c:70:15: warning: 'getCardHolderName' defined but not used [-Wunused-function]
+  EN_cardError getCardHolderName(ST_cardData *cardData)
+               ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:53:6: warning: 'main' defined but not used [-Wunused-function]
+  int main ()
+      ^~~~
+17:19:42 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:53:6: warning: 'main' is normally a non-static function [-Wmain]
+  int main ()
+      ^~~~
+..\Card\Card.c:85:2: error: expected declaration or statement at end of input
+  }
+  ^
+At top level:
+..\Card\Card.c:70:15: warning: 'getCardHolderName' defined but not used [-Wunused-function]
+  EN_cardError getCardHolderName(ST_cardData *cardData)
+               ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:53:6: warning: 'main' defined but not used [-Wunused-function]
+  int main ()
+      ^~~~
+17:20:19 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'getCardHolderNameTest':
+..\Card\Card.c:53:6: warning: 'main' is normally a non-static function [-Wmain]
+  int main ()
+      ^~~~
+..\Card\Card.c:86:2: error: expected declaration or statement at end of input
+  }
+  ^
+At top level:
+..\Card\Card.c:71:15: warning: 'getCardHolderName' defined but not used [-Wunused-function]
+  EN_cardError getCardHolderName(ST_cardData *cardData)
+               ^~~~~~~~~~~~~~~~~
+..\Card\Card.c:53:6: warning: 'main' defined but not used [-Wunused-function]
+  int main ()
+      ^~~~
+17:20:57 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+17:26:58 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+17:34:53 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+18:08:57 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:09:50 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+18:09:58 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:23:53 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:24:39 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:25:12 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:26:08 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+18:32:22 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:32:52 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Payment_App.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:32:55 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:43:40 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:44:54 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:45:41 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:46:03 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Payment_App.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:46:07 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+18:53:10 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+..\Card\Card.c: In function 'main':
+..\Card\Card.c:18:15: warning: unused variable 'ptr_card_data' [-Wunused-variable]
+  ST_cardData *ptr_card_data = &card_data ;
+               ^~~~~~~~~~~~~
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+18:53:49 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+19:01:12 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+19:03:20 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+19:08:08 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Payment_App.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:08:12 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App
+19:10:11 **** Incremental Build of configuration Debug for project Payment_App ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "Card\\Card.o" "..\\Card\\Card.c" 
+gcc -o Payment_App.exe "Application\\App.o" "Card\\Card.o" "Server\\Server.o" "Terminal\\Terminal.o" 
+Info: Nothing to build for Payment_App
+Info: Nothing to build for Payment_App

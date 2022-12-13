@@ -1,0 +1,32 @@
+/*
+ * Card.h
+ *
+ *  Created on: Dec 13, 2022
+ *      Author: Andrew Hany
+ */
+
+//file guard
+#ifndef CARD_CARD_H_
+#define CARD_CARD_H_
+
+//card info structure
+typedef struct ST_cardData
+{
+     char cardHolderName[25];
+     int primaryAccountNumber[20];
+     int cardExpirationDate[6];
+}ST_cardData;
+
+//card states
+typedef enum EN_cardError
+{
+     CARD_OK, WRONG_NAME, WRONG_EXP_DATE, WRONG_PAN
+}EN_cardError;
+
+//card prototype functions
+EN_cardError getCardHolderName(ST_cardData *cardData);
+EN_cardError getCardExpiryDate(ST_cardData *cardData);
+EN_cardError getCardPAN(ST_cardData *cardData);
+void getCardHolderNameTest(void);
+
+#endif /* CARD_CARD_H_ */

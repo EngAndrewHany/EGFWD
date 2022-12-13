@@ -1,0 +1,26 @@
+/*
+ * Card.c
+ *
+ *  Created on: Dec 13, 2022
+ *      Author: Andrew Hany
+ */
+
+#include <stdio.h>
+#include "Card.h"
+
+ST_cardData card_data;
+
+int main ()
+{
+	getCardHolderName(card_data;
+);
+}
+
+EN_cardError getCardHolderName(ST_cardData *cardData)
+{
+	printf ("Enter Your name: ");
+	gets (card_data.cardHolderName);
+	printf("your name is: %s", card_data.cardHolderName);
+}
+
+
