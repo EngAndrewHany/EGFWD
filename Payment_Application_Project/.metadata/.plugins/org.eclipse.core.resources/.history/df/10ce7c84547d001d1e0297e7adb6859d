@@ -1,0 +1,46 @@
+/*
+ * Card->c
+ *
+ *  Created on: Dec 13, 2022
+ *      Author: Andrew Hany
+ */
+
+#include "Card.h"
+#include <stdio.h>
+
+EN_cardError_t getCardHolderName(ST_cardData_t* cardData)
+ {
+    EN_cardError_t error = CARD_OK;
+    printf("Please enter the name of card owner \n \
+, kindly notice it must be more than 20 charcters and less than 24. \n");
+    gets(cardData->cardHolderName);
+    if (strlen(cardData->cardHolderName) > 24 || strlen(cardData->cardHolderName) < 20 || (cardData->cardHolderName) == NULL)
+    {
+        error = WRONG_NAME;
+    }
+    return error;
+}
+
+EN_cardError_t getCardExpiryDate(ST_cardData_t* cardData) {
+    EN_cardError_t error = CARD_OK;
+    printf("Please enter the Card Expiry Date in format MM/YY as M is month and Y is year \n");
+    gets(cardData->cardExpirationDate);
+    //   for (uint32_t counter = 0; counter < 5; counter++) {   printf("%c", TodayDate[counter]); }
+    if (strlen(cardData->cardExpirationDate) != 5 || (cardData->cardExpirationDate[2]) != '/' || (cardData->cardExpirationDate) == NULL)
+    {
+        error = WRONG_EXP_DATE;
+    }
+    return error;
+}
+
+EN_cardError_t getCardPAN(ST_cardData_t* cardData) {
+    EN_cardError_t error = CARD_OK;
+    printf("Please enter the name of card PAN , \n kindly notice it must be more than 16 charcters and less than 19. \n ");
+    gets(cardData->primaryAccountNumber);
+    if (strlen(cardData->primaryAccountNumber) > 19 || strlen(cardData->primaryAccountNumber) < 16 || (cardData->primaryAccountNumber) == NULL)
+    {
+        error =   WRONG_PAN;
+    }
+    return error;
+}
+

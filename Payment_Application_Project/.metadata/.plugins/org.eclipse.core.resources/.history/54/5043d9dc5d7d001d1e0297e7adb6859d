@@ -1,0 +1,120 @@
+/*
+ * Card->c
+ *
+ *  Created on: Dec 13, 2022
+ *      Author: Andrew Hany
+ */
+
+#include "Card.h"
+#include <stdio.h>
+#include <string.h>
+
+EN_cardError_t getCardHolderName(ST_cardData_t *cardData)
+{
+	printf ("Enter Your name: ");
+	fflush(stdout);
+	gets (cardData->cardHolderName);
+
+	//check name length
+	if (strlen(cardData->cardHolderName) < 20 || strlen(cardData->cardHolderName) > 25  )
+	{
+		return WRONG_NAME;
+	}
+
+	//check if all name is alphabet A-Z or a-z or space ' '
+	int i , no_of_char;
+	no_of_char = strlen(cardData->cardHolderName);
+	for (i = 0; i < no_of_char ; i++)
+	{
+		if ((cardData->cardHolderName[i] >= 'a' && cardData->cardHolderName[i] <= 'z') || (cardData->cardHolderName[i] >= 'A' && cardData->cardHolderName[i] <= 'Z') || (cardData->cardHolderName[i] == ' '))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_NAME;
+		}
+	}
+	return CARD_OK;
+}
+
+EN_cardError_t getCardExpiryDate(ST_cardData_t *cardData)
+{
+	printf ("Enter Expire Date in format \"MM/YY\": ");
+	fflush(stdout);
+	gets (cardData->cardExpirationDate);
+
+	//check date length
+	if (strlen(cardData->cardExpirationDate) != 5 )
+	{
+		return WRONG_EXP_DATE;
+	}
+
+	//check data expression if wrong or correct
+	int i;
+	for (i = 0; i < strlen(cardData->cardExpirationDate) ; i++)
+	{
+		if( ( (cardData->cardExpirationDate[0] == '0' && (cardData->cardExpirationDate[1] >= '1' && cardData->cardExpirationDate[1] <=  '9') )
+				|| (cardData->cardExpirationDate[0] ==  '1' && (cardData->cardExpirationDate[1] >=  '0' && cardData->cardExpirationDate[1] <=  '2') ) )
+				&& cardData->cardExpirationDate[2] ==  '/'
+						&& (cardData->cardExpirationDate [3] >=  '0' && cardData->cardExpirationDate [3] <=  '9' )
+						&& (cardData->cardExpirationDate [4] >=  '0' && cardData->cardExpirationDate [4] <=  '9' ))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_EXP_DATE;
+		}
+	}
+	return CARD_OK;
+}
+
+
+EN_cardError_t getCardPAN(ST_cardData_t *cardData)
+{
+	printf ("Enter Card PAN: ");
+	fflush(stdout);
+	gets (cardData->primaryAccountNumber);
+
+	//check PAN length
+	if (strlen(cardData->primaryAccountNumber) < 16 || strlen(cardData->primaryAccountNumber) > 19  )
+	{
+		return WRONG_PAN;
+	}
+
+	//check if string are numbers
+	int i ;
+	for (i = 0; i < strlen(cardData->primaryAccountNumber); i++)
+	{
+		if ((cardData->primaryAccountNumber[i] >= '0' && cardData->primaryAccountNumber[i] <= '9'))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_PAN;
+		}
+	}
+
+	return CARD_OK;
+}
+
+void getCardHolderNameTest(void)
+{
+	ST_cardData_t cardData;
+	ST_cardData_t *ptr_cardData = &cardData ;
+
+	printf("Please enter the card holder name \n");
+	fflush(stdout);
+	gets (cardData->cardHolderName);
+	if (getCardHolderName (cardData) == CARD_OK )
+	{
+		printf("The card holder name is correct \n");
+	}
+	else
+	{
+		printf("The card holder name is wrong \n");
+	}
+}
+

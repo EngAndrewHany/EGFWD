@@ -1,0 +1,278 @@
+/*
+ * Card.c
+ *
+ *  Created on: Dec 13, 2022
+ *      Author: Andrew Hany
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include "Card.h"
+
+ST_cardData card_data;
+
+int main ()
+{
+	ST_cardData *ptr_card_data = &card_data ;
+
+		 getCardHolderNameTest();
+
+	//get holder name
+//	int error = getCardHolderName(ptr_card_data);
+//	if (error == 1)
+//	{
+//		printf("WRONG_NAME \n");
+//		return 0 ;
+//	}
+
+	//	 getCardExpiryDateTest();
+
+	// get expire date
+//	error = getCardExpiryDate(ptr_card_data);
+//	if (error == 2)
+//	{
+//		printf("WRONG_EXP_DATE \n");
+//		return 0 ;
+//	}
+
+	//	 getCardPANTest();
+
+	// get Card PAN
+//	error = getCardPAN(ptr_card_data);
+//	if (error == 3)
+//	{
+//		printf("WRONG_PAN \n");
+//		return 0 ;
+//	}
+//	else
+//	{
+//		printf("CARD_OK \n");
+//	}
+}
+
+EN_cardError getCardHolderName(ST_cardData *cardData)
+{
+	printf ("Enter Your name: ");
+	fflush(stdout);
+	gets (card_data.cardHolderName);
+
+	//check name length
+	if (strlen(card_data.cardHolderName) < 20 || strlen(card_data.cardHolderName) > 25  )
+	{
+		return WRONG_NAME;
+	}
+
+	//check if all name is alphabet A-Z or a-z or space ' '
+	int i , no_of_char;
+	no_of_char = strlen(card_data.cardHolderName);
+	for (i = 0; i < no_of_char ; i++)
+	{
+		if ((card_data.cardHolderName[i] >= 'a' && card_data.cardHolderName[i] <= 'z') || (card_data.cardHolderName[i] >= 'A' && card_data.cardHolderName[i] <= 'Z') || (card_data.cardHolderName[i] == ' '))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_NAME;
+		}
+	}
+	return CARD_OK;
+}
+
+void getCardHolderNameTest(void)
+{
+	ST_cardData *ptr_card_data = &card_data ;
+
+	printf ("Tester name: Andrew Hany \n");
+	printf ("function name: getCardHolderName \n");
+	printf ("*********************************** \n");
+	for (int i = 0 ; i <4 ; i++)
+	{
+		printf ("test case %d \n", i+1);
+
+		switch (i)
+		{
+		case 0:
+			printf ("Expected input: less than 20 \n");
+			printf ("Expected output: WRONG_NAME \n");
+			break;
+		case 1:
+			printf ("Expected input: more than 25 \n");
+			printf ("Expected output: WRONG_NAME \n");
+			break;
+		case 2:
+			printf ("Expected input: include number in name \n");
+			printf ("Expected output: WRONG_NAME \n");
+			break;
+		case 3:
+			printf ("Expected input: right name \n");
+			printf ("Expected output: Card_OK \n");
+			break;
+		}
+
+		int error = getCardHolderName(ptr_card_data);
+		switch (error)
+		{
+		case 0:
+			printf("actual result: Card OK \n");
+			break;
+		case 1:
+			printf("actual result: Wrong name \n");
+			break;
+		}
+		printf ("*********************************** \n");
+	}
+}
+
+EN_cardError getCardExpiryDate(ST_cardData *cardData)
+{
+	printf ("Enter Expire Date in format \"MM/YY\": ");
+	fflush(stdout);
+	gets (card_data.cardExpirationDate);
+
+	//check date length
+	if (strlen(card_data.cardExpirationDate) != 5 )
+	{
+		return WRONG_EXP_DATE;
+	}
+
+	//check data expression if wrong or correct
+	int i;
+	for (i = 0; i < strlen(card_data.cardExpirationDate) ; i++)
+	{
+		if( ( (card_data.cardExpirationDate[0] == '0' && (card_data.cardExpirationDate[1] >= '1' && card_data.cardExpirationDate[1] <=  '9') )
+				|| (card_data.cardExpirationDate[0] ==  '1' && (card_data.cardExpirationDate[1] >=  '0' && card_data.cardExpirationDate[1] <=  '2') ) )
+				&& card_data.cardExpirationDate[2] ==  '/'
+						&& (card_data.cardExpirationDate [3] >=  '0' && card_data.cardExpirationDate [3] <=  '9' )
+						&& (card_data.cardExpirationDate [4] >=  '0' && card_data.cardExpirationDate [4] <=  '9' ))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_EXP_DATE;
+		}
+	}
+	return CARD_OK;
+}
+
+void getCardExpiryDateTest (void)
+{
+	ST_cardData *ptr_card_data = &card_data ;
+
+	printf ("Tester name: Andrew Hany \n");
+	printf ("function name: getCardExpiryDate \n");
+	printf ("*********************************** \n");
+
+	for (int i = 0 ; i <4 ; i++)
+	{
+		printf ("test case %d \n", i+1);
+
+		switch (i)
+		{
+		case 0:
+			printf ("Expected input: wrong length \n");
+			printf ("Expected output: WRONG_EXP_DATE \n");
+			break;
+		case 1:
+			printf ("Expected input: use \\ \n");
+			printf ("Expected output: WRONG_EXP_DATE \n");
+			break;
+		case 2:
+			printf ("Expected input: wrong month \n");
+			printf ("Expected output: WRONG_EXP_DATE \n");
+			break;
+		case 3:
+			printf ("Expected input: right input \n");
+			printf ("Expected output: Card_OK \n");
+			break;
+		}
+
+		int error = getCardExpiryDate(ptr_card_data);
+		switch (error)
+		{
+		case 0:
+			printf("actual result: Card_OK \n");
+			break;
+		case 2:
+			printf("actual result: WRONG_EXP_DATE \n");
+			break;
+		}
+		printf ("*********************************** \n");
+	}
+}
+
+EN_cardError getCardPAN(ST_cardData *cardData)
+{
+	printf ("Enter Card PAN: ");
+	fflush(stdout);
+	gets (card_data.primaryAccountNumber);
+
+	//check PAN length
+	if (strlen(card_data.primaryAccountNumber) < 16 || strlen(card_data.primaryAccountNumber) > 19  )
+	{
+		return WRONG_PAN;
+	}
+
+	//check if string are numbers
+	int i ;
+	for (i = 0; i < strlen(card_data.primaryAccountNumber); i++)
+	{
+		if ((card_data.primaryAccountNumber[i] >= '0' && card_data.primaryAccountNumber[i] <= '9'))
+		{
+			continue;
+		}
+		else
+		{
+			return WRONG_PAN;
+		}
+	}
+
+	return CARD_OK;
+}
+
+void getCardPANTest(void)
+{
+	ST_cardData *ptr_card_data = &card_data ;
+
+	printf ("Tester name: Andrew Hany \n");
+	printf ("function name: getCardPAN \n");
+	printf ("*********************************** \n");
+
+	for (int i = 0 ; i <4 ; i++)
+	{
+		printf ("test case %d \n", i+1);
+
+		switch (i)
+		{
+		case 0:
+			printf ("Expected input: less than 16 \n");
+			printf ("Expected output: WRONG_PAN \n");
+			break;
+		case 1:
+			printf ("Expected input: more than 19 \n");
+			printf ("Expected output: WRONG_PAN \n");
+			break;
+		case 2:
+			printf ("Expected input: alpha \n");
+			printf ("Expected output: WRONG_PAN \n");
+			break;
+		case 3:
+			printf ("Expected input: right input \n");
+			printf ("Expected output: Card_OK \n");
+			break;
+		}
+
+		int error = getCardPAN(ptr_card_data);
+		switch (error)
+		{
+		case 0:
+			printf("actual result: Card_OK \n");
+			break;
+		case 3:
+			printf("actual result: WRONG_PAN \n");
+			break;
+		}
+		printf ("*********************************** \n");
+	}
+}
