@@ -61,6 +61,20 @@ void appStart(void)
 
 	//	isBelowMaxAmountTest();
 
+	// ************************** Server Test ********************************
+
+	//	recieveTransactionDataTest();
+
+	//	isValidAccountTest();
+
+	//	isBlockedAccountTest();
+
+	//	isAmountAvailableTest();
+
+	//	saveTransactionTest();
+
+	//	listSavedTransactionsTest();
+
 	int ch = 1 ;
 	while ( ch == 1 )
 	{

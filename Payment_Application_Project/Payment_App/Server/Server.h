@@ -54,5 +54,11 @@ EN_serverError_t isAmountAvailable(ST_terminalData_t *termData, ST_accountsDB_t 
 EN_serverError_t saveTransaction(ST_transaction_t *transData);
 void listSavedTransactions(void);
 char* getTransStateS(EN_transState_t transState);
+void recieveTransactionDataTest(void);
+void isValidAccountTest(void);
+void isBlockedAccountTest(void);
+void isAmountAvailableTest(void);
+void saveTransactionTest(void);
+void listSavedTransactionsTest(void);
 
 #endif /* SERVER_SERVER_H_ */
